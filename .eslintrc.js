@@ -37,5 +37,8 @@ module.exports = {
     strict: 'error',
     'symbol-description': 'error',
     yoda: ['error', 'never', { exceptRange: true }],
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "indent": ["error", "tab"]  
   },
 };
