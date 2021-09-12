@@ -1,7 +1,9 @@
+import { json } from 'body-parser';
 import React from 'react';
 
 const getLeaders = () => {
-	return JSON.parse('./leaderboard.json');
+	const jsonData = require('./leaderboard.json');
+	return Array.from(jsonData.leaders);
 };
 
 const LeaderBoard = () => {
@@ -16,6 +18,9 @@ const LeaderBoard = () => {
 					<td>Completed Time (Secs)</td>
 				</tr>
 				<tr><td>{leaders}</td></tr>
+				{leaders.forEach(item => {
+					item;
+				})}
 			</table>
 		</div>
 	);
