@@ -17,10 +17,11 @@ const LeaderBoard = () => {
 					<td>Date &amp; Time Played</td>
 					<td>Completed Time (Secs)</td>
 				</tr>
-				<tr><td>{leaders}</td></tr>
-				{leaders.forEach(item => {
-					item;
-				})}
+				{
+					leaders.map((leader) => {
+						return <tr key={leader.id}><td>{leader.name}</td><td></td><td>{leader.timeSecs}</td></tr>;
+					})
+				}
 			</table>
 		</div>
 	);
