@@ -62,3 +62,23 @@
   font-weight: bold;
   margin: 15px;
 }
+
+.leaderboard-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 10px;
+}
+
+th, td {
+  border: 2px solid black;
+  text-align: left;
+}
+
+th {
+  background-color: #8842d5;
+  color: white;
+}
+
+tr:nth-child(even) {
+  background-color: darkgrey;
+}

@@ -10,18 +10,23 @@ const LeaderBoard = () => {
 	const leaders = getLeaders();
 
 	return (
-		<div className="leaderboard-table">
-			<table>
-				<tr>
-					<td>Name</td>
-					<td>Date &amp; Time Played</td>
-					<td>Completed Time (Secs)</td>
-				</tr>
-				{
-					leaders.map((leader) => {
-						return <tr key={leader.id}><td>{leader.name}</td><td></td><td>{leader.timeSecs}</td></tr>;
-					})
-				}
+		<div>
+			<table className="leaderboard-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date &amp; Time Played</th>
+						<th>Completed Time (Secs)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						leaders.map((leader) => {
+							return <tr key={leader.id}><td>{leader.name}</td><td></td><td>{leader.timeSecs}</td></tr>;
+						})
+					}
+				</tbody>
+				<tfoot />
 			</table>
 		</div>
 	);

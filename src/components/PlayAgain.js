@@ -1,15 +1,35 @@
+import { json } from 'body-parser';
 import React from 'react';
 
-const PlayAgain = (props) => (
-	<div className="game-done">
-		<div
-			className="message"
-			style={{ color: props.gameStatus === 'lost' ? 'red' : 'green' }}
-		>
-			{props.gameStatus === 'lost' ? 'Game Over' : 'Nice'}
-		</div>
-		<button onClick={props.onClick}>Play Again</button>
-	</div>
-);
+const getLeaders = () => {
+	const jsonData = require('./leaderboard.json');
+	return Array.from(jsonData.leaders);
+};
 
-export default PlayAgain;
+const LeaderBoardForm = () => {
+	const leaders = getLeaders();
+
+	return (
+		<div>
+			<table className="leaderboard-table">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Date &amp; Time Played</th>
+						<th>Completed Time (Secs)</th>
+					</tr>
+				</thead>
+				<tbody>
+					{
+						leaders.map((leader) => {
+							return <tr key={leader.id}><td>{leader.name}</td><td></td><td>{leader.timeSecs}</td></tr>;
+						})
+					}
+				</tbody>
+				<tfoot />
+			</table>
+		</div>
+	);
+};
+
+export default LeaderBoardForm;

@@ -48,8 +48,7 @@ const Game = (props) => {
 	} = useGameState();
 
 	const candidatesAreWrong = utils.sum(candidateNums) > stars;
-	const gameStatus =
-    availableNums.length === 0 ? 'won' : secondsLeft === 0 ? 'lost' : 'active';
+	const gameStatus = availableNums.length === 0 ? 'won' : secondsLeft === 0 ? 'lost' : 'active';
 
 	const numberStatus = (number) => {
 		if (!availableNums.includes(number)) {
@@ -100,6 +99,11 @@ const Game = (props) => {
 				</div>
 			</div>
 			<div className="timer">Time Remaining: {secondsLeft}</div>
+			<div className="left">
+				{gameStatus === 'won' ?
+					<PlayAgain onClick={props.startNewGame} gameStatus={gameStatus} /> : null
+				}
+			</div>
 			<div><LeaderBoard /></div>
 		</div>
 	);
