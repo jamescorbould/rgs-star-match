@@ -82,3 +82,11 @@ th {
 tr:nth-child(even) {
   background-color: darkgrey;
 }
+
+.form {
+  padding: 5px 20px;
+}
+
+.form fieldset {
+  margin: 20px 0;
+}

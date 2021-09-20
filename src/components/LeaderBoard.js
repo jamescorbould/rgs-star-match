@@ -1,4 +1,3 @@
-import { json } from 'body-parser';
 import React from 'react';
 
 const getLeaders = () => {
@@ -6,7 +5,7 @@ const getLeaders = () => {
 	return Array.from(jsonData.leaders);
 };
 
-const LeaderBoard = () => {
+const LeaderBoard = (props) => {
 	const leaders = getLeaders();
 
 	return (

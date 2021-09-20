@@ -5,6 +5,7 @@ import StarsDisplay from './StarsDisplay';
 import PlayNumber from './PlayNumber';
 import PlayAgain from './PlayAgain';
 import LeaderBoard from './LeaderBoard';
+import LeaderBoardForm from './LeaderBoardForm';
 
 const useGameState = () => {
 	const [stars, setStars] = useState(utils.random(1, 9));
@@ -76,7 +77,7 @@ const Game = (props) => {
 
 	return (
 		<div className="game">
-			<div className="help">P
+			<div className="help">
 				Pick 1 or more numbers that sum to the number of stars
 			</div>
 			<div className="body">
@@ -100,8 +101,7 @@ const Game = (props) => {
 			</div>
 			<div className="timer">Time Remaining: {secondsLeft}</div>
 			<div className="left">
-				{gameStatus === 'won' ?
-					<PlayAgain onClick={props.startNewGame} gameStatus={gameStatus} /> : null
+				{gameStatus === 'won' ? <LeaderBoardForm /> : null
 				}
 			</div>
 			<div><LeaderBoard /></div>
